@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var auth = require('./auth');
 const path = require('path');
 
 /* GET home page. */
