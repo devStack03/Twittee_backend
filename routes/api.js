@@ -1,9 +1,16 @@
 var express = require('express');
 var router = express.Router();
 const path = require('path');
-
+const { TwitterApi } = require('twitter-api-v2')
+require('dotenv').config()
+const client = new TwitterApi({
+  appKey: process.env.API_KEY,
+  appSecret: process.env.API_SECRET,
+  accessToken: process.env.ACCESS_TOKEN,
+  accessSecret: process.env.ACCESS_TOKEN_SECRET,
+})
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', async function(req, res, next) {
   // client.v1
   //   .tweet('This tweet was written by a bot')
   //   .then((val) => {
